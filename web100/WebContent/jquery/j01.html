@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+<script>
+
+//jQuery(함수주소); // DOM 트리가 완성된 후 해당 함수를 호출함.
+jQuery(function(){
+	alert("okok");
+});
+
+//jquery.ready(함수주소); // 위와 같다.
+jQuery(document).ready(function(){
+	alert("오호라.. ");
+});
+
+</script>
+</head>
+<body>
+
+<div id="main" class="container">
+<h1>성적 정보</h1>
+<table id="scoreTable" class="table table-hover">
+<tr>
+  <th>이름</th>
+  <th>국어</th>
+  <th>영어</th>
+  <th>수학</th>
+  <th>총점</th>
+  <th>평균</th>
+</tr>
+<tr>
+  <td>홍길동</td>
+  <td>100</td>
+  <td>100</td>
+  <td>100</td>
+  <td>300</td>
+  <td>100</td>
+</tr>
+<tr>
+  <td>임꺽정</td>
+  <td>10</td>
+  <td>10</td>
+  <td>10</td>
+  <td>30</td>
+  <td>10</td>
+</tr>
+</table>
+
+<hr>
+<h2>성적 양식2</h2>
+<form>
+이름:<input id="name" type="text"><br>
+국어:<input id="kor" type="text"><br>
+영어:<input id="eng" type="text"><br>
+수학:<input id="math" type="text"><br>
+<button type="button" id="addBtn" class="btn btn-primary">등록</button>
+<button type="button" class="btn btn-primary">변경</button>
+<button type="button" class="btn btn-primary">삭제</button>
+</form>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

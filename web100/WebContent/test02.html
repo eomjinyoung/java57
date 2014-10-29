@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap-theme.css">
+<style>
+#main { /* 태그 아이디로 스타일 지정하기 */
+  width: 500px;
+}
+</style>
+<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+<script>
+//뒤에 있던 자바스크립트를 앞으로 옮긴다면 다음과 같이
+//load 이벤트 리스너에 해당 코드를 넣어라.
+window.onload = function() {
+	var addBtn = document.getElementById("addBtn");
+	
+	addBtn.addEventListener("click", function(event){
+	  var table = document.getElementById("scoreTable");
+	  
+	  var newTR = document.createElement("tr");
+	  var kor = parseInt(document.getElementById("kor").value);
+	  var eng = parseInt(document.getElementById("eng").value);
+	  var math = parseInt(document.getElementById("math").value);
+	  var sum = kor + eng + math;
+	  var average = sum / 3.0;
+	  
+	  newTR.innerHTML = "<td>" + 
+	    document.getElementById("name").value + "</td><td>" + 
+	    kor + "</td><td>" + 
+	    eng + "</td><td>" +
+	    math + "</td><td>" +
+	    sum + "</td><td>" +
+	    average + "</td>";
+	    
+	  table.appendChild(newTR);
+	  
+	});
+}
+</script>
+</head>
+<body>
+
+<div id="main" class="container">
+<h1>성적 정보</h1>
+<table id="scoreTable" class="table table-hover">
+<tr>
+  <th>이름</th>
+  <th>국어</th>
+  <th>영어</th>
+  <th>수학</th>
+  <th>총점</th>
+  <th>평균</th>
+</tr>
+<tr>
+  <td>홍길동</td>
+  <td>100</td>
+  <td>100</td>
+  <td>100</td>
+  <td>300</td>
+  <td>100</td>
+</tr>
+<tr>
+  <td>임꺽정</td>
+  <td>10</td>
+  <td>10</td>
+  <td>10</td>
+  <td>30</td>
+  <td>10</td>
+</tr>
+</table>
+
+<hr>
+<h2>성적 양식2</h2>
+<form>
+이름:<input id="name" type="text"><br>
+국어:<input id="kor" type="text"><br>
+영어:<input id="eng" type="text"><br>
+수학:<input id="math" type="text"><br>
+<button type="button" id="addBtn" class="btn btn-primary">등록</button>
+<button type="button" class="btn btn-primary">변경</button>
+<button type="button" class="btn btn-primary">삭제</button>
+</form>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
