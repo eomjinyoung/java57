@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+<script>
+$(function(){
+	// 이벤트 등록
+	// addBtn 아이디를 갖는 태그를 찾아서 상자에 담아 리턴해 주세요.
+	var addBtnBox = $("#addBtn");
+	
+	// addBtnBox 상자에 들어 있는 모든 태그에 대해 click 이벤트 리스너를 등록하라.
+	// click()이라는 함수는 내부적으로 브라우저의 종류나 버전에 따라
+	// attachEvent()를 호출하거나 addEventListener()를 호출할 것이다.
+	// 개발자는 더이상 브라우저의 종류나 버전을 걱정할 필요가 없다. 
+	// => cross browsing 이라한다.
+	addBtnBox.click(function(event){
+		alert("okokok 눌렀어?")
+	});
+	
+	
+	
+});
+
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+
+<div id="main" class="container">
+<h1>성적 정보</h1>
+<table id="scoreTable" class="table table-hover">
+<tr>
+  <th>이름</th>
+  <th>국어</th>
+  <th>영어</th>
+  <th>수학</th>
+  <th>총점</th>
+  <th>평균</th>
+</tr>
+<tr>
+  <td>홍길동</td>
+  <td>100</td>
+  <td>100</td>
+  <td>100</td>
+  <td>300</td>
+  <td>100</td>
+</tr>
+<tr>
+  <td>임꺽정</td>
+  <td>10</td>
+  <td>10</td>
+  <td>10</td>
+  <td>30</td>
+  <td>10</td>
+</tr>
+</table>
+
+<hr>
+<h2>성적 양식2</h2>
+<form>
+이름:<input id="name" type="text"><br>
+국어:<input id="kor" type="text"><br>
+영어:<input id="eng" type="text"><br>
+수학:<input id="math" type="text"><br>
+<button type="button" id="addBtn" class="btn btn-primary">등록</button>
+<button type="button" class="btn btn-primary">변경</button>
+<button type="button" class="btn btn-primary">삭제</button>
+</form>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

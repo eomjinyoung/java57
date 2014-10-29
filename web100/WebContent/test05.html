@@ -12,20 +12,20 @@
 </style>
 <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
 <script>
-//엘리먼트 찾기
-// 등록 버튼에 click 이벤트 리스너 등록하기
+// form 항목(input, select, button, ..)의 값 꺼내기
+// $(찾기).val()
 $(function() {	
 	var addBtn = $("#addBtn");
 	addBtn.click(function(event){// 난 더이상 브라우저 종류와 버전을 고민하지 않는다.
 	  var table = document.getElementById("scoreTable");
 	  var newTR = document.createElement("tr");
-	  var kor = parseInt(document.getElementById("kor").value);
-	  var eng = parseInt(document.getElementById("eng").value);
-	  var math = parseInt(document.getElementById("math").value);
+	  var kor = parseInt($("#kor").val());
+	  var eng = parseInt($("#eng").val());
+	  var math = parseInt($("#math").val());
 	  var sum = kor + eng + math;
 	  var average = sum / 3.0;
 	  newTR.innerHTML = "<td>" + 
-	    document.getElementById("name").value + "</td><td>" + 
+	    $("#name").val() + "</td><td>" + 
 	    kor + "</td><td>" + 
 	    eng + "</td><td>" +
 	    math + "</td><td>" +
