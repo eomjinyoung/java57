@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+<script>
+// jQuery() 함수의 이름이 길다. 좀 더 코딩하기 쉽게 짧은 이름으로 만들면 안되냐?
+//var $ = jQuery; // jQuery 라이브러리 파일에 이미 정의되어 있다.
+		
+//jQuery(함수주소); // DOM 트리가 완성된 후 해당 함수를 호출함.
+$(function(){
+	alert("okok3");
+});
+
+//jquery.ready(함수주소); // 위와 같다.
+$(document).ready(function(){
+	alert("오호라..3 ");
+});
+
+</script>
+</head>
+<body>
+
+<div id="main" class="container">
+<h1>성적 정보</h1>
+<table id="scoreTable" class="table table-hover">
+<tr>
+  <th>이름</th>
+  <th>국어</th>
+  <th>영어</th>
+  <th>수학</th>
+  <th>총점</th>
+  <th>평균</th>
+</tr>
+<tr>
+  <td>홍길동</td>
+  <td>100</td>
+  <td>100</td>
+  <td>100</td>
+  <td>300</td>
+  <td>100</td>
+</tr>
+<tr>
+  <td>임꺽정</td>
+  <td>10</td>
+  <td>10</td>
+  <td>10</td>
+  <td>30</td>
+  <td>10</td>
+</tr>
+</table>
+
+<hr>
+<h2>성적 양식2</h2>
+<form>
+이름:<input id="name" type="text"><br>
+국어:<input id="kor" type="text"><br>
+영어:<input id="eng" type="text"><br>
+수학:<input id="math" type="text"><br>
+<button type="button" id="addBtn" class="btn btn-primary">등록</button>
+<button type="button" class="btn btn-primary">변경</button>
+<button type="button" class="btn btn-primary">삭제</button>
+</form>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
