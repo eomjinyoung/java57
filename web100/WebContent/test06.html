@@ -3,35 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap-theme.css">
+<style>
+#main { /* 태그 아이디로 스타일 지정하기 */
+  width: 500px;
+}
+</style>
+<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
 <script>
-$(function(){
-	// 태그 생성하기
-	$('#addBtn').click(function(event){
-		var h01 = $('<h1>오호라...</h1>'); // 태그 + 내용 
-		var h02 = $('<h1>');
-		h02.html('헐... 내용'); // 시작 태그와 끝 태그 사이에 값 설정하기
-		
-		//var h03 = $('<h1></h1>');
-		var h03 = $('<h1/>');
-		h03.html('다 같다..');
-		
-		var h04 = $('<h1>').html('이어서 바로 호출...');
-		
-		// 태그를 만들었으면, 다른 태그에 붙여야지...
-		// 1) 부모를 찾아서 그 막내 자식으로 등록하기
-		$('#main').append(h01);
-		$('#main').append(h02);
-		
-		// 2) 자식 상자에 담겨있는 모든 태그를 부모의 막내 자식으로 등록하기
-		h03.appendTo('#main');
-		h04.appendTo('#main');
-	
-		
-	});
-	
-	
-	
+// j06 예제의 기술 적용
+$(function() {  
+  var addBtn = $("#addBtn");
+  addBtn.click(function(event){// 난 더이상 브라우저 종류와 버전을 고민하지 않는다.
+    //var table = $("#scoreTable");
+    var newTR = $("<tr>");
+    var kor = parseInt($("#kor").val());
+    var eng = parseInt($("#eng").val());
+    var math = parseInt($("#math").val());
+    var sum = kor + eng + math;
+    var average = sum / 3.0;
+    newTR.html("<td>" + 
+      $("#name").val() + "</td><td>" + 
+      kor + "</td><td>" + 
+      eng + "</td><td>" +
+      math + "</td><td>" +
+      sum + "</td><td>" +
+      average + "</td>");
+    newTR.appendTo('#scoreTable');
+    //table.append(newTR);
+  });
 });
 </script>
 </head>
@@ -80,6 +81,13 @@ $(function(){
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 
