@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+</head>
+<body>
+
+<button type="button" id="btn1" class="btn btn-primary">테스트</button>
+<div id="msg"></div>
+<script>
+// eval() 함수의 사용
+// eval(자바스크립트 코드 문자열) => 해당 자바스크립트를 실행한다.
+/*
+$('#btn1').click(function(){
+	$.ajax('../jsp/test03.jsp')
+	 .done(function(data){
+		  var obj = eval('(' + data + ')');
+		  alert(obj.name);
+		  alert(obj.age);
+		  alert(obj.tel);
+	  });
+});
+*/
+
+// JSON 객체 사용하기
+// parse(객체생성 자바스크립트 코드만 가능) => 리턴 값은 당연히 자바스크립트 객체
+// JSON : javascript object notation
+// 예) =======>   { 프로퍼티명: 값, 프로퍼티명: 값, ...} 
+// JSON 형식에서는 모든 문자열을 반드시 더블 쿼테이션 " "를 사용하여 표시해야 한다.
+$('#btn1').click(function(){
+	  $.ajax('../jsp/test03.jsp')
+	   .done(function(data){
+	      var obj = JSON.parse(data);
+	      alert("=>" + obj.name);
+	      alert("=>" + obj.age);
+	      alert("=>" + obj.tel);
+	    });
+	});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

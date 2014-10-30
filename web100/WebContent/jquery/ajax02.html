@@ -10,64 +10,14 @@
 <button type="button" id="btn1" class="btn btn-primary">테스트</button>
 <div id="msg"></div>
 <script>
-/*
-// 자바스크립트에서 객체 생성 방법
-var obj1 = new Object();
-obj1.name = "홍길동";
-obj1['age'] = 20;
-obj1["tel"] = '111-2222';
-obj1["first name ^^"] = '111-2222';
-//obj1.first name ^^ = 'nono'; // 오류...
-
-var obj2 = {};
-obj2.name = "홍길동";
-obj2['age'] = 20;
-obj2["tel"] = '111-2222';
-
-var obj3 = {
-	name: "홍길동",
-	'age': 20,
-	"tel": '111-1111'
-};
-*/
-
-
-
-// 방법1.
-/*
+// eval() 함수의 사용
+// eval(자바스크립트 코드 문자열) => 해당 자바스크립트를 실행한다.
 $('#btn1').click(function(){
-	$.ajax('../jsp/test01.jsp')
+	$.ajax('../jsp/test02.jsp')
 	 .done(function(data){
-		$('#msg').html(data);
-	});
+		  eval(data);
+	  });
 });
-*/
-/*
-var settings = new Object();
-settings.success = function(data) {
-	//...
-};
-
-var settings2 = {};
-settings.success = function(data) {
-  //...	  
-};
-
-var settings3 = {
-	success: function(data) {
-		//...
-	}	
-};
-*/
-//방법2.
-$('#btn1').click(function(){
-  $.ajax('../jsp/test01.jsp', {
-	  success: function(data){
-		  $('#msg').html(data);
-	  }
-  });
-});
-
 </script>
 
 </body>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+</head>
+<body>
+
+<button type="button" id="btn1" class="btn btn-primary">테스트</button>
+<table id='t1' border='1'>
+<tr>
+  <th>번호</th>
+  <th>제목</th>
+  <th>내용</th>
+</tr>
+</table>
+<script>
+// JSON 배열 객체 생성하기 
+// 예) [{...},{...},{...}, .. ] 이런 문자열을 받아서 자바스크립트 배열로 생성하기
+$('#btn1').click(function(){
+	/*
+	  $.ajax('../jsp/test05.jsp', {dataType: 'json'})
+	   .done(function(arr){
+	      var board;
+	      for (var i = 0; i < arr.length; i++) {
+	    	  board = arr[i];
+	    	  $('<tr>').html(
+	    			  '<td>#' + board.no + '</td>' +
+	    			  '<td>#' + board.subject + '</td>' + 
+	    			  '<td>#' + board.content + '</td>').appendTo('#t1');
+	      }
+	    });
+
+	*/
+	$.getJSON('../jsp/test05.jsp', function(arr){
+        var board;
+        for (var i = 0; i < arr.length; i++) {
+          board = arr[i];
+          $('<tr>').html(
+              '<td>@' + board.no + '</td>' +
+              '<td>@' + board.subject + '</td>' + 
+              '<td>@' + board.content + '</td>').appendTo('#t1');
+        }
+      });
+});	
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
