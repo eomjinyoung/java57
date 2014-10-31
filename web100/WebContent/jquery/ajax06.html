@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+</head>
+<body>
+
+<button type="button" id="btn1" class="btn btn-primary">테스트</button>
+<table id='t1' border='1'>
+<tr>
+  <th>번호</th>
+  <th>제목</th>
+  <th>내용</th>
+</tr>
+</table>
+<script>
+$('#btn1').click(function(){
+	$.getJSON('../board/list.do', function(arr){
+		  console.log("오호라...");
+        var board;
+        for (var i = 0; i < arr.length; i++) {
+          board = arr[i];
+          $('<tr>').html(
+              '<td>' + board.no + '</td>' +
+              '<td>' + board.subject + '</td>' + 
+              '<td>' + board.content + '</td>').appendTo('#t1');
+        }
+      });
+	
+	console.log("okok");
+	console.log("nono");
+	
+});	
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
